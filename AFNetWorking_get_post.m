@@ -12,14 +12,14 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
  //如果返回的是XML，那么告诉AFN，响应的时候使用XML的方式解析
 // manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
 
- //如果返回的就是二进制数据，那么采用默认二进制的方式来解析数据
+ //如果返回的就是二进制数据，那么采用默认二进制的方式来解析数据（HTTP）
  manager.responseSerializer = [AFHTTPResponseSerializer serializer];
 
  //采用JSON的方式来解析数据
  //manager.responseSerializer = [AFJSONResponseSerializer serializer];
 
 
-manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"image/png"];
+manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"image/png"]; //指定接收信号为image/png
 NSDictionary *paramDict = @{
     @"j_username": @"jishuhan",
     @"j_password": @"00@Wuxian",
