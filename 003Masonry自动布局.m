@@ -17,14 +17,14 @@
     UIButton *view1 = [[UIButton alloc]init];
     view1.backgroundColor = [UIColor redColor];
     [self.view addSubview:view1];
-
+# pragma mark 普通布局
     [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_top).with.offset(padding.top); //with is an optional semantic filler
         make.left.equalTo(self.view.mas_left).with.offset(padding.left);
         make.bottom.equalTo(self.view.mas_bottom).with.offset(-padding.bottom);
         make.right.equalTo(self.view.mas_right).with.offset(-padding.right);
     }];
-
+# pragma mark 多个布局
     UIEdgeInsets btnMargin = UIEdgeInsetsMake(0, 10, 0, 10);
     UIButton *btn1 = [[UIButton alloc]init];
     UIButton *btn2 = [[UIButton alloc]init];
@@ -66,3 +66,11 @@
         make.bottom.equalTo(@-20);
         make.height.equalTo(@40);
     }];
+
+# pragma mark - Safe Area
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+          make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
+          make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+          make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+          make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+      }];
