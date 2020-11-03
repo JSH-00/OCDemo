@@ -33,7 +33,7 @@
     NSLog(@"LOG-----> func1 finish %@",[NSThread currentThread]);
     
 }
-11
+
 - (void)func2 {
     NSLog(@"LOG-----> 2 %@",[NSThread currentThread]);
 }
